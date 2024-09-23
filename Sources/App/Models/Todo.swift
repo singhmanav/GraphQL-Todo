@@ -13,17 +13,14 @@ final class Todo: Model, @unchecked Sendable {
     @Field(key: "title")
     var title: String
 
+    @Field(key: "isCompleted")
+    var isCompleted: Bool
+
     init() { }
 
-    init(id: UUID? = nil, title: String) {
+    init(id: UUID? = nil, title: String, isCompleted: Bool) {
         self.id = id
         self.title = title
-    }
-    
-    func toDTO() -> TodoDTO {
-        .init(
-            id: self.id,
-            title: self.$title.value
-        )
+        self.isCompleted = isCompleted
     }
 }
