@@ -24,6 +24,10 @@ let todoSchema = try! Schema<TodoResolver, Request> {
     Mutation {
         Field("createTodo", at: TodoResolver.createTodo) {
             Argument("title", at: \.title)
+        }
+
+        Field("updateCompletion", at: TodoResolver.updateCompletion) {
+            Argument("id", at: \.id)
             Argument("isCompleted", at: \.isCompleted)
         }
 
