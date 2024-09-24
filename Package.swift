@@ -1,4 +1,4 @@
-// swift-tools-version:5.4
+// swift-tools-version:5.10
 import PackageDescription
 
 let package = Package(
@@ -47,4 +47,7 @@ let package = Package(
     ]
 )
 
-var swiftSettings: [SwiftSetting] { [] }
+var swiftSettings: [SwiftSetting] { [
+    .enableUpcomingFeature("DisableOutwardActorInference"),
+    .enableExperimentalFeature("StrictConcurrency"),
+] }
